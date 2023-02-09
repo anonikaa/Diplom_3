@@ -17,11 +17,19 @@ public class LoginPage {
     public boolean isThisLoginPage(){
         return driver.findElement(loginTitle).isDisplayed();
     }
-    public void inputCorrectEmail(){}
-    public void inputCorrectPassword(){}
-    public void clickLoginButton(){}
-    public void clickRegisterLink(){}
-    public void clickRestorePasswordLink(){}
-
-
+    public void inputCorrectEmail(){
+        driver.findElement(emailField).sendKeys(TestData.EMAIL_FOR_LOGIN);
+    }
+    public void inputCorrectPassword(){
+        driver.findElement(passwordField).sendKeys(TestData.PASSWORD_FOR_LOGIN);
+    }
+    public void clickLoginButton(){
+        driver.findElement(loginButton).click();
+    }
+    public void clickRegisterLink(){
+        driver.findElement(registerLink).click();
+    }
+    public void clickRestorePasswordLink(){
+        driver.findElement(restorePasswordLink).click();
+    }
 }
