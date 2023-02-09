@@ -43,4 +43,11 @@ public class LoginPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(createOrder));
         return driver.findElement(createOrder).isDisplayed();
     }
+    public void login(){
+        inputCorrectEmail();
+        inputCorrectPassword();
+        clickLoginButton();
+        itShouldBeCreateOrderButton();
+
+    }
 }
