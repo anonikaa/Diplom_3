@@ -18,6 +18,8 @@ public class LoginPage {
         this.driver = driver;
     }
     public boolean isThisLoginPage(){
+        new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.visibilityOfElementLocated(loginTitle));
         return driver.findElement(loginTitle).isDisplayed();
     }
     public void inputCorrectEmail(){
