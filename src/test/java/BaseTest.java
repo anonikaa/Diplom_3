@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
 import org.junit.After;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -10,7 +11,7 @@ public class BaseTest {
         @Before
         public void before() {
             driver = getDriver("chrome");
-            driver.get("https://stellarburgers.nomoreparties.site/");
+            driver.get(TestData.BASE_URL);
 
         }
         private WebDriver getDriver(String browserName){

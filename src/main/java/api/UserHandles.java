@@ -8,7 +8,7 @@ public class UserHandles {
                 .header("Content-type", "application/json")
                 .body(login)
                 .when()
-                .post("https://stellarburgers.nomoreparties.site/api/auth/login").then();
+                .post("api/auth/login").then();
     }
     public ValidatableResponse apiDeleteUser (String token){
         return given()
@@ -16,5 +16,12 @@ public class UserHandles {
                 .header("authorization", token)
                 .when()
                 .delete("https://stellarburgers.nomoreparties.site/api/auth/user").then();
+    }
+    public ValidatableResponse apiRegisterUser(RegisterPojo registerPojo){
+        return given()
+                .header("Content-type", "application/json")
+                .body(registerPojo)
+                .when()
+                .post("/api/auth/register").then();
     }
 }

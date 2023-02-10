@@ -1,8 +1,13 @@
+import api.LoginPojo;
+import api.RegisterPojo;
+import api.UserHandles;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage {
     private WebDriver driver;
+    UserHandles userHandles;
+    RegisterPojo registerPojo;
     public RegisterPage (WebDriver driver) {
         this.driver = driver;
     }
@@ -25,13 +30,9 @@ public class RegisterPage {
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(email);
     }
-    public void inputCorrectPassword(String password){
+    public void inputPassword(String password){
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
-    }
-    public void inputIncorrectPassword(){
-        driver.findElement(passwordField).click();
-        driver.findElement(passwordField).sendKeys(TestData.INCORRECT_PASSWORD);
     }
     public void clickRegisterButton(){
         driver.findElement(registerButton).click();
@@ -42,7 +43,7 @@ public class RegisterPage {
     public boolean incorrectPasswordToastShouldBePresented(){
         return driver.findElement(incorrectPasswordToast).isDisplayed();
     }
-    public RegisterPage getTheRigisterPage(){
+    public RegisterPage getTheRegisterPage(){
         MainPage mainPage = new MainPage(driver);
         mainPage.clickGoToAccountButton();
         LoginPage loginPage = new LoginPage(driver);

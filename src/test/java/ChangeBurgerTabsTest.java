@@ -1,35 +1,26 @@
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class ChangeBurgerTabsTest  extends BaseTest {
     @Test
     public void moveToBulkiTabTest(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickTabConstructor("Начинки");
-        mainPage.clickTabConstructor("Булки");
-        WebElement sauceTitleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Булки")));
-        boolean sauceElementIsDisplayed = sauceTitleInList.isDisplayed();
-        Assert.assertEquals(true, sauceElementIsDisplayed);
+        mainPage.clickNachinkiTab();
+        mainPage.clickBulkiTab();
+        Assert.assertEquals(true, mainPage.isThisBulkiSection());
     }
     @Test
     public void moveToSauceTabTest(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickTabConstructor("Соусы");
-        WebElement titleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Соусы")));
-        boolean sauceElementIsDisplayed = titleInList.isDisplayed();
-        Assert.assertEquals(true, sauceElementIsDisplayed);
+        mainPage.clickSauseTab();
+        Assert.assertEquals(true, mainPage.isThisSauseSection());
     }
     @Test
-    public void moveToNachinkiTabTest() throws InterruptedException {
+    public void moveToNachinkiTabTest(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.clickTabConstructor("Начинки");
-        WebElement titleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Начинки")));
-        boolean sauceElementIsDisplayed = titleInList.isDisplayed();
-        Assert.assertEquals(true, sauceElementIsDisplayed);
+        mainPage.clickNachinkiTab();
+        Assert.assertEquals(true, mainPage.isThisNachinkiSection());
     }
 
 }
