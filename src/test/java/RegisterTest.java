@@ -15,7 +15,7 @@ public class RegisterTest extends BaseTest{
     private LoginPojo loginPojo;
     @Before
     public void setUp(){
-    RestAssured.baseURI = "https://stellarburgers.nomoreparties.site/";}
+    RestAssured.baseURI = TestData.BASE_URL;}
 
     @After
     public void deleteRegisterUser(){

@@ -16,7 +16,7 @@ public class GoToConstructorFromLK extends BaseTest{
     String password;
     @Before
     public void setUp(){
-        RestAssured.baseURI = "https://stellarburgers.nomoreparties.site/";
+        RestAssured.baseURI = TestData.BASE_URL;
         registerPojo = new RegisterPojo(TestData.registerEmail, TestData.registerPassword, TestData.registerName);
         userHandles = new UserHandles();
         userHandles.apiRegisterUser(registerPojo);}

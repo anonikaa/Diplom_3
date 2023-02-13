@@ -15,7 +15,7 @@ public class UserHandles {
                 .header("Content-type", "application/json")
                 .header("authorization", token)
                 .when()
-                .delete("https://stellarburgers.nomoreparties.site/api/auth/user").then();
+                .delete("api/auth/user").then();
     }
     public ValidatableResponse apiRegisterUser(RegisterPojo registerPojo){
         return given()
