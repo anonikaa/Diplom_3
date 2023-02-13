@@ -39,8 +39,8 @@ public class LoginTest extends BaseTest {
         MainPage mainPage = new MainPage(driver);
         mainPage.clickGoToAccountButton();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputCorrectEmail(login);
-        loginPage.inputCorrectPassword(password);
+        loginPage.inputEmail(login);
+        loginPage.inputPassword(password);
         loginPage.clickLoginButton();
         Assert.assertEquals(true, loginPage.itShouldBeCreateOrderButton());
     }
@@ -50,8 +50,8 @@ public class LoginTest extends BaseTest {
         mainPage.clickGoToPersonalCabinetButton();
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertEquals(true, loginPage.isThisLoginPage());
-        loginPage.inputCorrectEmail(login);
-        loginPage.inputCorrectPassword(password);
+        loginPage.inputEmail(login);
+        loginPage.inputPassword(password);
         loginPage.clickLoginButton();
         Assert.assertEquals(true, loginPage.itShouldBeCreateOrderButton());
     }
@@ -66,8 +66,8 @@ public class LoginTest extends BaseTest {
         registerPage.clickLoginLink();
         LoginPage loginPageAgain = new LoginPage(driver);
         Assert.assertEquals(true, loginPageAgain.isThisLoginPage());
-        loginPageAgain.inputCorrectEmail(login);
-        loginPageAgain.inputCorrectPassword(password);
+        loginPageAgain.inputEmail(login);
+        loginPageAgain.inputPassword(password);
         loginPageAgain.clickLoginButton();
         Assert.assertEquals(true, loginPageAgain.itShouldBeCreateOrderButton());
     }
@@ -81,8 +81,8 @@ public class LoginTest extends BaseTest {
         restorePasswordPage.clickLoginButton();
         LoginPage loginPageAgain = new LoginPage(driver);
         Assert.assertEquals(true, loginPageAgain.isThisLoginPage());
-        loginPageAgain.inputCorrectEmail(login);
-        loginPageAgain.inputCorrectPassword(password);
+        loginPageAgain.inputEmail(login);
+        loginPageAgain.inputPassword(password);
         loginPageAgain.clickLoginButton();
         Assert.assertEquals(true, loginPageAgain.itShouldBeCreateOrderButton());
     }

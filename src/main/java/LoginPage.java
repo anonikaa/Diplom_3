@@ -1,8 +1,5 @@
 import api.LoginPojo;
-import api.RegisterPojo;
 import api.UserHandles;
-import io.restassured.RestAssured;
-import io.restassured.response.ValidatableResponse;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,11 +26,11 @@ public class LoginPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(loginTitle));
         return driver.findElement(loginTitle).isDisplayed();
     }
-    public void inputCorrectEmail(String email){
+    public void inputEmail(String email){
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(email);
     }
-    public void inputCorrectPassword(String password){
+    public void inputPassword(String password){
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
     }
@@ -57,8 +54,8 @@ public class LoginPage {
         loginPojo = new LoginPojo (login,  password);
         userHandles = new UserHandles();
         userHandles.apiLoginUser(loginPojo);
-        inputCorrectEmail(loginPojo.getEmail());
-        inputCorrectPassword(loginPojo.getPassword());
+        inputEmail(loginPojo.getEmail());
+        inputPassword(loginPojo.getPassword());
         clickLoginButton();
         itShouldBeCreateOrderButton();
     }

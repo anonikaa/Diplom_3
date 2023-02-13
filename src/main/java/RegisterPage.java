@@ -1,4 +1,3 @@
-import api.LoginPojo;
 import api.RegisterPojo;
 import api.UserHandles;
 import org.openqa.selenium.By;
@@ -22,11 +21,11 @@ public class RegisterPage {
     public boolean isThisRegisterPage(){
         return driver.findElement(registerTitle).isDisplayed();
     }
-    public void inputCorrectName(String name){
+    public void inputName(String name){
         driver.findElement(nameField).click();
         driver.findElement(nameField).sendKeys(name);
     }
-    public void inputCorrectEmail(String email){
+    public void inputEmail(String email){
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(email);
     }

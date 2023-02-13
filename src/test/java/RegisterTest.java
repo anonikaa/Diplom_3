@@ -38,8 +38,8 @@ public class RegisterTest extends BaseTest{
         login = TestData.registerEmail;
         password = TestData.INCORRECT_PASSWORD;
 
-        registerPage.inputCorrectName(TestData.registerName);
-        registerPage.inputCorrectEmail(login);
+        registerPage.inputName(TestData.registerName);
+        registerPage.inputEmail(login);
         registerPage.inputPassword(password);
         registerPage.clickRegisterButton();
         Assert.assertEquals(true, registerPage.incorrectPasswordToastShouldBePresented());
@@ -52,8 +52,8 @@ public class RegisterTest extends BaseTest{
 
         login = TestData.registerEmail;
         password = TestData.registerPassword;
-        registerPage.inputCorrectName(TestData.registerName);
-        registerPage.inputCorrectEmail(login);
+        registerPage.inputName(TestData.registerName);
+        registerPage.inputEmail(login);
         registerPage.inputPassword(password);
         registerPage.clickRegisterButton();
 
